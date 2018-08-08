@@ -67,6 +67,7 @@ class CatalogueActivity : AppCompatActivity() {
         btn_next = findViewById(R.id.next)
         //once created, there is no previous page
         btn_prev!!.isEnabled = false
+        btn_next!!.isEnabled = false
         //intialize empty array list to be used with createon of the adapter
         val aCans = ArrayList<Can>()
         canAdapter = CatalogueAdapter(this, aCans)
@@ -97,6 +98,7 @@ class CatalogueActivity : AppCompatActivity() {
 
     //function used to shift between pages of the list. Filling adapter with images from different pages
     private fun loadAdapter(number: Int) {
+        progress!!.visibility = ProgressBar.VISIBLE
         //setting text on the label indicating how many pages there is
         if(pageCount!==0){
             pageNum!!.text = "Page "+(number+1)+" of "+pageCount
@@ -118,6 +120,7 @@ class CatalogueActivity : AppCompatActivity() {
                 break
             }
         }
+        progress!!.visibility = ProgressBar.GONE
     }
 
 
@@ -270,7 +273,7 @@ class CatalogueActivity : AppCompatActivity() {
         val searchView = searchItem.actionView as SearchView
         searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
             override fun onQueryTextSubmit(query: String): Boolean {
-                // Fetch the data remotely
+                //If the query is capitalized, make search case sensitive, otherwise it is case insensitive
                 if ( query == query.capitalize()) {
                     searchCans(query, false)
                 } else {
