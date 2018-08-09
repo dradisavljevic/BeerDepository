@@ -16,4 +16,51 @@ object Helper {
         }.joinToString("")
     }
 
+
+    //Function to convert Serbian cyrillic text to serbian latin or english latin
+    fun cyrillicDecode(cyrillicText : String, fullDecode : Boolean): String {
+        //list containing Serbian cyrillic lower case letters
+        var cyrillicSRB = arrayOf("а","б","в","г","д","ђ","е","ж","з","и","ј","к","л","м","н","њ","о","п","р","с","т","ћ","у","ф","х","ц","ч","џ","ш")
+        //list containing Serbian latin lower case letters
+        var latinSRB =  arrayOf("a","b","v","g","d","đ","e","ž","z","i","j","k","l","m","n","nj","o","p","r","s","t","ć","u","f","h","c","č","dž","š")
+        //list containing English latin lower case letters
+        var latinENG =  arrayOf("a","b","v","g","d","dj","e","z","z","i","j","k","l","m","n","nj","o","p","r","s","t","c","u","f","h","c","c","dz","s")
+
+        val capitalizeList = arrayListOf<String>()
+
+        //Add capital letters to all three lists
+
+        for (i in 0 until cyrillicSRB.size) {
+            capitalizeList.add(cyrillicSRB[i].capitalize())
+        }
+        cyrillicSRB += capitalizeList
+
+        capitalizeList.removeAll(capitalizeList)
+
+        for (i in 0 until latinSRB.size) {
+            capitalizeList.add(latinSRB[i].capitalize())
+        }
+        latinSRB += capitalizeList
+
+        capitalizeList.removeAll(capitalizeList)
+
+        for (i in 0 until latinENG.size) {
+            capitalizeList.add(latinENG[i].capitalize())
+        }
+        latinENG += capitalizeList
+
+        //Return Serbian latin or English latin conversion
+        return if (fullDecode) {
+            cyrillicText.map { it ->
+                val index = cyrillicSRB.indexOf(it.toString())
+                if (index >= 0) latinENG[index] else it
+            }.joinToString("")
+        } else {
+            cyrillicText.map { it ->
+                val index = cyrillicSRB.indexOf(it.toString())
+                if (index >= 0) latinSRB[index] else it
+            }.joinToString("")
+        }
+    }
+
 }

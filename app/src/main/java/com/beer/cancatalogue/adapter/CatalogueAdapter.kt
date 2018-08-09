@@ -1,10 +1,10 @@
-package com.beer.cancatalogue.adapters
+package com.beer.cancatalogue.adapter
 
 import android.view.ViewGroup
 import android.widget.ArrayAdapter
 import android.view.View
 import android.content.Context
-import com.beer.cancatalogue.models.Can
+import com.beer.cancatalogue.model.Can
 import com.squareup.picasso.Picasso
 import android.widget.TextView
 import android.view.LayoutInflater

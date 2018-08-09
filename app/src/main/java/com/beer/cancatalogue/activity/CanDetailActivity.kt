@@ -1,10 +1,10 @@
-package com.beer.cancatalogue.activities
+package com.beer.cancatalogue.activity
 
 
 import com.squareup.picasso.Picasso
 import android.widget.ImageView
 import com.beer.cancatalogue.R
-import com.beer.cancatalogue.models.Can
+import com.beer.cancatalogue.model.Can
 import android.widget.TextView
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity

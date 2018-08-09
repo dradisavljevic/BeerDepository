@@ -1,12 +1,12 @@
-package com.beer.cancatalogue.activities
+package com.beer.cancatalogue.activity
 
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.ListView
 import com.beer.cancatalogue.R
-import com.beer.cancatalogue.adapters.CatalogueAdapter
-import com.beer.cancatalogue.models.Can
+import com.beer.cancatalogue.adapter.CatalogueAdapter
+import com.beer.cancatalogue.model.Can
 import com.beer.cancatalogue.net.CatalogueClient
 import com.loopj.android.http.JsonHttpResponseHandler
 import cz.msebera.android.httpclient.Header
@@ -21,7 +21,6 @@ import android.widget.AdapterView
 import java.text.Normalizer
 import java.util.*
 import android.widget.Button
-import android.view.View.OnClickListener
 import android.widget.TextView
 import com.beer.cancatalogue.util.Helper
 
