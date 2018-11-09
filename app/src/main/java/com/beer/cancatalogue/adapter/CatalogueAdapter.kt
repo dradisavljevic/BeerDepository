@@ -45,7 +45,7 @@ class CatalogueAdapter(context: Context, aCans: ArrayList<Can>) : ArrayAdapter<C
         //Add can title and full description to be displayed. Also displaying picture from image's URL
         viewHolder.tvTitle!!.text = can!!.title
         viewHolder.tvDesc!!.text = can.info
-        Picasso.with(context).load(Uri.parse(can.canPicture)).resize(120,160).error(R.drawable.empty3).into(viewHolder.ivCanPhoto)
+        Picasso.with(context).load(Uri.parse(can.canPicture)).error(R.drawable.empty3).into(viewHolder.ivCanPhoto)
         // Return the completed view to render on screen
         return convertView
     }
