@@ -32,8 +32,8 @@ class CatalogueActivity : AppCompatActivity() {
     private var client: CatalogueClient? = null
     private var progress : ProgressBar? = null
     private var pageNum : TextView? = null
-    private var btn_prev: Button? = null
-    private var btn_next: Button? = null
+    private var btnPrev: Button? = null
+    private var btnNext: Button? = null
 
     //variable clientId is access key to Imgur API. Album hash represents album specific part of URL that leads to desired album. This part is top secret :)
     private var clientId : String? = null
@@ -62,11 +62,11 @@ class CatalogueActivity : AppCompatActivity() {
         progress = findViewById<View>(R.id.progress) as ProgressBar
         pageNum = findViewById<View>(R.id.pageNum) as TextView
         //buttons for pagination
-        btn_prev = findViewById(R.id.prev)
-        btn_next = findViewById(R.id.next)
+        btnPrev = findViewById(R.id.prev)
+        btnNext = findViewById(R.id.next)
         //once created, there is no previous page
-        btn_prev!!.isEnabled = false
-        btn_next!!.isEnabled = false
+        btnPrev!!.isEnabled = false
+        btnNext!!.isEnabled = false
         //intialize empty array list to be used with createon of the adapter
         val aCans = ArrayList<Can>()
         canAdapter = CatalogueAdapter(this, aCans)
@@ -81,13 +81,13 @@ class CatalogueActivity : AppCompatActivity() {
         setupCanSelectedListener()
 
         //adding listeners to both buttons to be used for pagination purpose
-        btn_next!!.setOnClickListener {
+        btnNext!!.setOnClickListener {
             increment++
             loadAdapter(increment)
             checkEnable()
         }
 
-        btn_prev!!.setOnClickListener {
+        btnPrev!!.setOnClickListener {
             increment--
             loadAdapter(increment)
             checkEnable()
@@ -317,8 +317,8 @@ class CatalogueActivity : AppCompatActivity() {
 
     //Checks if buttons should be enabled or disabled
     private fun checkEnable() {
-        btn_next!!.isEnabled = increment + 1 !== pageCount
-        btn_prev!!.isEnabled = increment !== 0
+        btnNext!!.isEnabled = increment + 1 !== pageCount
+        btnPrev!!.isEnabled = increment !== 0
     }
 
 }

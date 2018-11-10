@@ -5,9 +5,9 @@
     <uses-permission android:name="android.permission.INTERNET" />
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@mipmap/can_launcher_square"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:roundIcon="@mipmap/can_launcher"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".activity.CatalogueActivity">
@@ -19,7 +19,8 @@
         </activity>
         <activity
             android:name=".activity.CanDetailActivity"
-            android:label="@string/title_can_detail" >
+            android:label="@string/title_can_detail"
+            android:configChanges="orientation|screenSize|keyboard">
         </activity>
     </application>
 

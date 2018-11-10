@@ -25,7 +25,7 @@
     <ListView
         android:id="@+id/lvCans"
         android:layout_width="match_parent"
-        android:layout_height="504dp" />
+        android:layout_height="220dp" />
 
     <HorizontalScrollView
         android:layout_width="fill_parent"
@@ -42,20 +42,20 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:layout_alignParentBottom="true">
-    <Button
-        android:id="@+id/prev"
-        android:text="Prev"
-        android:layout_weight="1"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        />
+        <Button
+            android:id="@+id/prev"
+            android:text="Prev"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            />
 
-    <Button
-        android:id="@+id/next"
-        android:text="Next"
-        android:layout_weight="1"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        />
+        <Button
+            android:id="@+id/next"
+            android:text="Next"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            />
     </LinearLayout>
 </LinearLayout>

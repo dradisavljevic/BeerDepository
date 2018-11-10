@@ -19,6 +19,7 @@ class Can : Serializable {
     var origin: String? = null
     var bought: String? = null
     var canColor: String? = null
+    var album: String? = null
 
     // URL towards picture of the can
     val canPicture: String
@@ -31,8 +32,8 @@ class Can : Serializable {
         try {
             // Deserialize json into object fields
             can.imgurId =  if (jsonObject.has("id")) jsonObject.getString("id") else ""
-            can.title =  if (jsonObject.has("title")) jsonObject.getString("title") else "NO_TITLE"
-            can.info =  if (jsonObject.has("description")) jsonObject.getString("description") else "NO DESCRIPTION"
+            can.title =  if (jsonObject.has("title")) jsonObject.getString("title") else "NO TITLE"
+            can.info =  if (jsonObject.has("description")) jsonObject.getString("description") else "NO INFORMATION"
 
             //We split the description attribute into multiple other fields, using ; as delimiter, and place them into a HashMap
             val hMap = hashMapOf<String, String>()
@@ -47,6 +48,10 @@ class Can : Serializable {
                 }
             }
 
+            //Hide information about the image album
+            val publicInfo = can.info?.split("Album:")?.get(0)
+            can.info = publicInfo
+
 
             //From the newly created HashMap, we place information into the fields of Can object
             if (hMap != null) {
@@ -57,6 +62,7 @@ class Can : Serializable {
                 can.ownership = if (hMap.containsKey("Ownership")) hMap["Ownership"] else "Both"
                 can.canColor = if (hMap.containsKey("Color")) hMap["Color"] else "Not Specified"
                 can.description = if (hMap.containsKey("Description")) hMap["Description"] else "Not Specified"
+                can.album = if (hMap.containsKey("Album")) hMap["Album"] else "Not Existing"
             }
 
         } catch (e: JSONException) {
