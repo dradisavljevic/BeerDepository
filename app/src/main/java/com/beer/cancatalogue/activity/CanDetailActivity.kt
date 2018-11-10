@@ -50,7 +50,7 @@ class CanDetailActivity : AppCompatActivity() {
         this.title = can.title
 
         //Picasso library to conveniently read image from the imgur URL that is located in can's canPicture field
-        Picasso.with(this).load(Uri.parse(can.canPicture)).error(R.drawable.empty3).into(ivCanPhoto)
+        Picasso.with(this).load(Uri.parse(can.canPicture)).resize(360,480).error(R.drawable.empty3).into(ivCanPhoto)
         //populate graphical components
         tvBrand!!.text = can.brand
         tvChar!!.text = can.description
