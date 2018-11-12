@@ -1,13 +1,13 @@
-package com.beer.cancatalogue.activity
+package com.beer.depository.activity
 
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.ListView
-import com.beer.cancatalogue.R
-import com.beer.cancatalogue.adapter.CatalogueAdapter
-import com.beer.cancatalogue.model.Can
-import com.beer.cancatalogue.net.CatalogueClient
+import com.beer.depository.R
+import com.beer.depository.adapter.CatalogueAdapter
+import com.beer.depository.model.Can
+import com.beer.depository.net.CatalogueClient
 import com.loopj.android.http.JsonHttpResponseHandler
 import cz.msebera.android.httpclient.Header
 import org.json.JSONArray
@@ -22,7 +22,7 @@ import java.text.Normalizer
 import java.util.*
 import android.widget.Button
 import android.widget.TextView
-import com.beer.cancatalogue.util.Helper
+import com.beer.depository.util.Helper
 
 //Main activity of the program. Represents the list of cans - a catalogue
 class CatalogueActivity : AppCompatActivity() {

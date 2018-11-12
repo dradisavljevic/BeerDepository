@@ -1,15 +1,15 @@
-package com.beer.cancatalogue.adapter
+package com.beer.depository.adapter
 
 import android.view.ViewGroup
 import android.widget.ArrayAdapter
 import android.view.View
 import android.content.Context
-import com.beer.cancatalogue.model.Can
+import com.beer.depository.model.Can
 import com.squareup.picasso.Picasso
 import android.widget.TextView
 import android.view.LayoutInflater
 import android.widget.ImageView
-import com.beer.cancatalogue.R
+import com.beer.depository.R
 import android.net.Uri
 
 //ArrayAdapter of Cans. Has constructor explicitly stated

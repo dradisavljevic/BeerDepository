@@ -1,4 +1,4 @@
-package com.beer.cancatalogue.net
+package com.beer.depository.net
 
 import com.loopj.android.http.JsonHttpResponseHandler
 import com.loopj.android.http.AsyncHttpClient

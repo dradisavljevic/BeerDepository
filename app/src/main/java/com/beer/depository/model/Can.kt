@@ -1,4 +1,4 @@
-package com.beer.cancatalogue.model
+package com.beer.depository.model
 
 import org.json.JSONException
 import org.json.JSONArray

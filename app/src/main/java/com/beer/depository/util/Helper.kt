@@ -1,4 +1,4 @@
-package com.beer.cancatalogue.util
+package com.beer.depository.util
 
 //object to hold helper functions. Currently the only function is not in use
 object Helper {

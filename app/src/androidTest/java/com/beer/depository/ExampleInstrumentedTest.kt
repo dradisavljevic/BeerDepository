@@ -1,4 +1,4 @@
-package com.beer.cancatalogue
+package com.beer.depository
 
 import android.support.test.InstrumentationRegistry
 import android.support.test.runner.AndroidJUnit4
