@@ -1,4 +1,4 @@
-# Beer Can Catalogue
+# Beer Depository
 
 Android app written in Kotlin that uses [Imgur API] (https://apidocs.imgur.com/) to browse images of currently owned beer cans and display them along with beer information. 
 
