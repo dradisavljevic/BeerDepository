@@ -84,12 +84,14 @@ class CatalogueActivity : AppCompatActivity() {
         btnNext!!.setOnClickListener {
             increment++
             loadAdapter(increment)
+            lvCans!!.setSelectionAfterHeaderView()
             checkEnable()
         }
 
         btnPrev!!.setOnClickListener {
             increment--
             loadAdapter(increment)
+            lvCans!!.setSelectionAfterHeaderView()
             checkEnable()
         }
 
