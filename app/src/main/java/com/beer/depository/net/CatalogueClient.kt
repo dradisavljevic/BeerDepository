@@ -30,8 +30,21 @@ class CatalogueClient {
 
     }
 
+    fun getImages(handler: JsonHttpResponseHandler, clientId : String, albumHash: String) {
+        try {
+            val imagesHash = albumHash + "/images"
+            val url = getApiUrl(imagesHash)
+            //Authorize in order to use API
+            client.addHeader("Authorization", "Client-ID $clientId")
+            client.get(url , handler)
+        } catch (e: UnsupportedEncodingException) {
+            e.printStackTrace()
+        }
+
+    }
+
     //Base URL for shooting imgur API and fetching images of an album
     companion object {
-        private val API_BASE_URL = "https://api.imgur.com/3/album/"
+        private const val API_BASE_URL = "https://api.imgur.com/3/album/"
     }
 }

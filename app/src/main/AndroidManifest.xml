@@ -23,6 +23,11 @@
             android:label="@string/title_can_detail"
             android:screenOrientation="portrait" >
         </activity>
+        <activity
+            android:name="com.beer.depository.activity.ImageActivity"
+            android:label="@string/title_can_image"
+            android:screenOrientation="portrait" >
+        </activity>
     </application>
 
 </manifest>

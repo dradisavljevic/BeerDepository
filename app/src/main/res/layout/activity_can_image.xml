@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="wrap_content"
+    android:layout_height="fill_parent"
+    android:orientation="vertical"
+    android:background="@color/colorPrimary"
+    android:gravity="center_horizontal|center_vertical">
+
+    <com.jsibbold.zoomage.ZoomageView
+        android:id="@+id/canFullSizeImage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        app:zoomage_restrictBounds="true"
+        app:zoomage_animateOnReset="true"
+        app:zoomage_translatable="true"
+        app:zoomage_minScale="0.8"
+        app:zoomage_maxScale="8"
+        app:zoomage_doubleTapToZoom = "true"
+        app:zoomage_doubleTapToZoomScaleFactor = "2"
+        android:adjustViewBounds="true" />
+
+
+
+</LinearLayout>

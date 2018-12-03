@@ -1,6 +1,7 @@
 package com.beer.depository.activity
 
 
+import android.content.Intent
 import com.squareup.picasso.Picasso
 import android.widget.ImageView
 import com.beer.depository.R
@@ -11,7 +12,7 @@ import android.support.v7.app.AppCompatActivity
 import android.view.MenuItem
 import android.net.Uri
 
-//Otheractivity of the program, used to display more detailed information about each can
+//Activity of the program used to display more detailed information about each can
 class CanDetailActivity : AppCompatActivity() {
     //fields to hold values of graphical components
     private var ivCanPhoto: ImageView? = null
@@ -29,18 +30,25 @@ class CanDetailActivity : AppCompatActivity() {
         //assigning layout view to our activity
         setContentView(R.layout.activity_detail_can)
         //gathering all the graphical components into variables
-        ivCanPhoto = findViewById(R.id.ivCanPhoto) as ImageView
-        tvBrand = findViewById(R.id.tvBrand) as TextView
-        tvChar = findViewById(R.id.tvChar) as TextView
-        tvOrigin = findViewById(R.id.tvOrigin) as TextView
-        tvBought = findViewById(R.id.tvBought) as TextView
-        tvQuantity = findViewById(R.id.tvQuantity) as TextView
-        tvColor = findViewById(R.id.tvColor) as TextView
-        tvOwner = findViewById(R.id.tvOwner) as TextView
+        ivCanPhoto = findViewById(R.id.ivCanPhoto)
+        tvBrand = findViewById(R.id.tvBrand)
+        tvChar = findViewById(R.id.tvChar)
+        tvOrigin = findViewById(R.id.tvOrigin)
+        tvBought = findViewById(R.id.tvBought)
+        tvQuantity = findViewById(R.id.tvQuantity)
+        tvColor = findViewById(R.id.tvColor)
+        tvOwner = findViewById(R.id.tvOwner)
 
         val can = intent.getSerializableExtra("can") as Can
         //Call a function that fills graphical component with information
         loadCan(can)
+        ivCanPhoto!!.setOnClickListener {
+            val intent = Intent(this@CanDetailActivity, ImageActivity::class.java)
+            intent.putExtra("image", can.canPicture)
+            intent.putExtra("title", can.title)
+            intent.putExtra("album", can.album)
+            startActivity(intent)
+        }
     }
 
 

@@ -55,14 +55,15 @@ class Can : Serializable {
 
             //From the newly created HashMap, we place information into the fields of Can object
             if (hMap != null) {
-                can.brand = if (hMap.containsKey("Brand")) hMap["Brand"] else "Not Specified"
-                can.origin = if (hMap.containsKey("Country of Origin")) hMap["Country of Origin"] else "Unknown"
-                can.bought = if (hMap.containsKey("Bought in")) hMap["Bought in"] else "Unknown"
-                can.quantity = if (hMap.containsKey("Quantity")) hMap["Quantity"] else "Not Specified"
-                can.ownership = if (hMap.containsKey("Ownership")) hMap["Ownership"] else "Both"
-                can.canColor = if (hMap.containsKey("Color")) hMap["Color"] else "Not Specified"
-                can.description = if (hMap.containsKey("Description")) hMap["Description"] else "Not Specified"
-                can.album = if (hMap.containsKey("Album")) hMap["Album"] else "Not Existing"
+
+                can.brand = if (hMap.containsKey("Brand") && hMap["Brand"]!=" ") hMap["Brand"] else "Not Specified"
+                can.origin = if (hMap.containsKey("Country of Origin") && hMap["Country of Origin"]!=" ") hMap["Country of Origin"] else "Unknown"
+                can.bought = if (hMap.containsKey("Bought in") && hMap["Bought in"]!=" ") hMap["Bought in"] else "Unknown"
+                can.quantity = if (hMap.containsKey("Quantity") && hMap["Quantity"]!=" ") hMap["Quantity"] else "Not Specified"
+                can.ownership = if (hMap.containsKey("Ownership") && hMap["Ownership"]!=" ") hMap["Ownership"] else "Both"
+                can.canColor = if (hMap.containsKey("Color") && hMap["Color"]!=" ") hMap["Color"] else "Not Specified"
+                can.description = if (hMap.containsKey("Description") && hMap["Description"]!=" ") hMap["Description"] else "Not Specified"
+                can.album = if (hMap.containsKey("Album") && hMap["Album"]!=" ") hMap["Album"] else "Not Existing"
             }
 
         } catch (e: JSONException) {

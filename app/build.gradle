@@ -7,8 +7,8 @@ apply plugin: 'kotlin-android-extensions'
 android {
     compileSdkVersion 28
     defaultConfig {
-        applicationId "com.beer.cancatalogue"
-        minSdkVersion 15
+        applicationId "com.beer.depository"
+        minSdkVersion 16
         targetSdkVersion 28
         versionCode 1
         versionName "1.0"
@@ -28,6 +28,7 @@ dependencies {
     implementation 'com.android.support:appcompat-v7:28.0.0-beta01'
     implementation 'com.android.support.constraint:constraint-layout:1.1.2'
     implementation 'com.squareup.picasso:picasso:2.5.2'
+    implementation 'com.jsibbold:zoomage:1.2.0'
     implementation 'com.loopj.android:android-async-http:1.4.9'
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
