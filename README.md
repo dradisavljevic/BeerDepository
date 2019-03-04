@@ -4,6 +4,10 @@ Android app written in Kotlin that uses [Imgur API](https://apidocs.imgur.com/) 
 
 App currently consists of two screens. First and main one is a paginated list of cans. Every can in the list has it's photo, Imgur title and full description shown here. For best performance, it is limited to 10 cans per page. The second screen represents a more detailed view of the can, displaying a bigger picture and more structurally organized information from the can's description. This view opens once the user has selected a specific beer can from the catalogue.
 
+## ARCHIVED
+
+The app has been archived in favour of developing a cross platform [React Native one](https://github.com/dradisavljevic/BeerDepository-React-Native).
+
 ## Motivation
 
 App was created for the purpose of keeping track of my best friend's and mine beer can collection. As the number of cans in the collection increased it was difficult to keep track of which can is a new addition and which is a duplicate. Since one brand of beer can have multiple can designs, this app offers the possibility of comparing those designs.
